@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PULSO — La plataforma de gestión municipal que sí funciona</title>
+<title>PULSOapp — La plataforma de gestión municipal que sí funciona</title>
 <meta name="description" content="Ordena la administración, aumenta la recaudación y genera evidencia real de tu gestión. Sin consultores externos ni presupuestos imposibles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +47,7 @@
     .secPad{padding-top:60px!important;padding-bottom:60px!important;}
     .planRow{flex-direction:column!important;align-items:flex-start!important;gap:18px!important;}
     .ctaFinalH{font-size:36px!important;}
-    .mobileMenu{display:flex!important;}
+    .mobileMenu.open{display:flex!important;}
   }
   .mobileMenu{display:none;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #E5DCCF;padding:20px 22px;gap:16px;z-index:49;}
   .mobileMenu a{font-size:17px;font-weight:600;color:#1A1714;padding:10px 0;border-bottom:1px solid #F0E9DC;}
@@ -61,13 +61,14 @@
   <div class="wrap" style="height:68px;display:flex;align-items:center;justify-content:space-between;">
     <a href="#top" style="display:flex;align-items:center;gap:11px;">
       <svg viewBox="0 0 120 120" width="28" height="28" style="display:block;flex:none;"><circle cx="60" cy="60" r="13" fill="#EE5B3D"/><circle cx="60" cy="60" r="31" fill="none" stroke="#EE5B3D" stroke-width="8.5"/><circle cx="60" cy="60" r="51" fill="none" stroke="#EE5B3D" stroke-width="8.5" opacity="0.35"/></svg>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;">PULSO</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;">PULSO<span style="color:#EE5B3D;">app</span></span>
     </a>
     <div class="navLinks">
       <a href="#problema" class="navLink">El contexto</a>
       <a href="#solucion" class="navLink">Qué hace</a>
       <a href="#modulos" class="navLink">Módulos</a>
       <a href="#planes" class="navLink">Planes</a>
+      <a href="https://demo.pulsoapp.app" target="_blank" class="ctaBtnSm" style="background:#1A1714;">Demo en vivo <span style="font-family:'Space Mono',monospace;">→</span></a>
       <a href="#demo" class="ctaBtnSm">Agendá una demo <span style="font-family:'Space Mono',monospace;">→</span></a>
     </div>
     <button class="navBurger" onclick="toggleMenu()" style="align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #E5DCCF;border-radius:11px;cursor:pointer;background:none;" aria-label="Menú">
@@ -80,6 +81,7 @@
   <a href="#solucion" onclick="toggleMenu()">Qué hace</a>
   <a href="#modulos" onclick="toggleMenu()">Módulos</a>
   <a href="#planes" onclick="toggleMenu()">Planes</a>
+  <a href="https://demo.pulsoapp.app" target="_blank" onclick="toggleMenu()" style="color:#1A1714!important;font-weight:700;">Demo en vivo →</a>
   <a href="#demo" onclick="toggleMenu()" style="color:#EE5B3D!important;">Agendá una demo →</a>
 </div>
 
@@ -316,7 +318,7 @@
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;">
     <div style="display:flex;align-items:center;gap:11px;">
       <svg viewBox="0 0 120 120" width="24" height="24" style="display:block;flex:none;"><circle cx="60" cy="60" r="13" fill="#EE5B3D"/><circle cx="60" cy="60" r="31" fill="none" stroke="#EE5B3D" stroke-width="8.5"/><circle cx="60" cy="60" r="51" fill="none" stroke="#EE5B3D" stroke-width="8.5" opacity="0.35"/></svg>
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;">PULSO <span style="color:#837A6E;font-weight:400;">· por TELECOR</span></span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;">PULSO<span style="color:#EE5B3D;">app</span> <span style="color:#837A6E;font-weight:400;">· por TELECOR</span></span>
     </div>
     <div style="display:flex;gap:26px;font-size:14px;color:#A89E90;">
       <a href="#top" style="transition:color .2s;" onmouseover="this.style.color='#FAF6EF'" onmouseout="this.style.color='#A89E90'">Inicio</a>
@@ -331,7 +333,7 @@
 <script>
 function toggleMenu(){
   var m=document.getElementById('mobileMenu');
-  m.style.display=m.style.display==='flex'?'none':'flex';
+  m.classList.toggle('open');
 }
 (function(){
   var reveal=function(){
