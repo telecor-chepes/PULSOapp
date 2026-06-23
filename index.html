@@ -47,7 +47,7 @@
     .secPad{padding-top:60px!important;padding-bottom:60px!important;}
     .planRow{flex-direction:column!important;align-items:flex-start!important;gap:18px!important;}
     .ctaFinalH{font-size:36px!important;}
-    .mobileMenu{display:flex!important;}
+    .mobileMenu.open{display:flex!important;}
   }
   .mobileMenu{display:none;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #E5DCCF;padding:20px 22px;gap:16px;z-index:49;}
   .mobileMenu a{font-size:17px;font-weight:600;color:#1A1714;padding:10px 0;border-bottom:1px solid #F0E9DC;}
@@ -333,7 +333,7 @@
 <script>
 function toggleMenu(){
   var m=document.getElementById('mobileMenu');
-  m.style.display=m.style.display==='flex'?'none':'flex';
+  m.classList.toggle('open');
 }
 (function(){
   var reveal=function(){
